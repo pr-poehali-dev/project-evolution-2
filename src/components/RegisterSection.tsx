@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { ArrowUpRight, TrendingUp, Shield, Zap } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
@@ -8,9 +8,27 @@ const benefits = [
   { icon: Zap, text: "Вывод за 24 часа" },
 ]
 
-export function RegisterSection() {
+const planToAmount: Record<string, string> = {
+  "Старт": "50k",
+  "Профи": "500k",
+  "Премиум": "1m+",
+}
+
+interface RegisterSectionProps {
+  selectedPlan?: string
+}
+
+export function RegisterSection({ selectedPlan }: RegisterSectionProps) {
   const [form, setForm] = useState({ name: "", phone: "", amount: "" })
   const [submitted, setSubmitted] = useState(false)
+
+  useEffect(() => {
+    if (selectedPlan && planToAmount[selectedPlan]) {
+      setForm((prev) => ({ ...prev, amount: planToAmount[selectedPlan] }))
+      const el = document.getElementById("register-section")
+      el?.scrollIntoView({ behavior: "smooth", block: "center" })
+    }
+  }, [selectedPlan])
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -18,7 +36,7 @@ export function RegisterSection() {
   }
 
   return (
-    <section className="px-4 md:px-8 py-16">
+    <section id="register-section" className="px-4 md:px-8 py-16">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div>
           <span className="inline-block mb-4 rounded-full bg-violet-500/20 px-3 py-1 text-xs font-medium text-violet-400">
@@ -53,6 +71,13 @@ export function RegisterSection() {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+              {selectedPlan && (
+                <div className="rounded-xl bg-violet-500/10 border border-violet-500/20 px-4 py-3">
+                  <p className="text-sm text-violet-300">
+                    Выбран тариф: <span className="font-semibold">{selectedPlan}</span>
+                  </p>
+                </div>
+              )}
               <div>
                 <label className="mb-2 block text-xs text-gray-400">Ваше имя</label>
                 <input

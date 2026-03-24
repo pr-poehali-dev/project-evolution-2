@@ -1,6 +1,10 @@
 import { Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
+interface PricingSectionProps {
+  onSelectPlan: (plan: string) => void
+}
+
 const plans = [
   {
     name: "Старт",
@@ -49,7 +53,7 @@ const plans = [
   },
 ]
 
-export function PricingSection() {
+export function PricingSection({ onSelectPlan }: PricingSectionProps) {
   return (
     <section className="px-4 md:px-8 py-16">
       <div className="max-w-6xl mx-auto">
@@ -105,6 +109,7 @@ export function PricingSection() {
               </ul>
 
               <Button
+                onClick={() => onSelectPlan(plan.name)}
                 className={`w-full rounded-xl ${
                   plan.highlighted
                     ? "bg-violet-600 hover:bg-violet-700 text-white"
