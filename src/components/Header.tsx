@@ -7,19 +7,19 @@ export function Header() {
       <div className="flex items-center gap-2">
         <ФинПотокLogo />
         <span className="text-lg font-semibold text-white">
-          ФинПоток<sup className="text-xs">™</sup>
+          ИнвестПро<sup className="text-xs">™</sup>
         </span>
       </div>
 
       <nav className="hidden md:flex items-center gap-8">
         <a href="#" className="text-sm text-gray-300 hover:text-white transition-colors">
-          Продукты
+          Стратегии
         </a>
         <a href="#" className="text-sm text-gray-300 hover:text-white transition-colors flex items-center gap-1">
-          Решения <ChevronDown className="h-4 w-4" />
+          Инструменты <ChevronDown className="h-4 w-4" />
         </a>
         <a href="#" className="text-sm text-gray-300 hover:text-white transition-colors">
-          Ресурсы
+          Аналитика
         </a>
         <a href="#" className="text-sm text-gray-300 hover:text-white transition-colors">
           Тарифы
@@ -33,7 +33,7 @@ export function Header() {
         variant="outline"
         className="rounded-full border-violet-500 text-violet-400 hover:bg-violet-500/10 hover:text-violet-300 bg-transparent"
       >
-        Запросить демо
+        Начать инвестировать
       </Button>
     </header>
   )

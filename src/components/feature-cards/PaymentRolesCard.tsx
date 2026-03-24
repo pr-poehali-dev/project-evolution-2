@@ -9,8 +9,8 @@ export function PaymentRolesCard() {
         <Shield className="h-5 w-5 text-gray-400" />
       </div>
 
-      <h3 className="mb-2 text-lg font-semibold text-white">Управление правами доступа</h3>
-      <p className="mb-4 text-sm text-gray-400">Устанавливайте лимиты, согласования и распределяйте права по команде</p>
+      <h3 className="mb-2 text-lg font-semibold text-white">Контроль рисков</h3>
+      <p className="mb-4 text-sm text-gray-400">Устанавливайте лимиты, защитные стоп-лоссы и автоматическую ребалансировку портфеля</p>
 
       <a href="#" className="mb-6 inline-flex items-center text-sm text-gray-400 hover:text-white transition-colors">
         Подробнее <ArrowUpRight className="ml-1 h-4 w-4" />
@@ -25,7 +25,7 @@ export function PaymentRolesCard() {
             </Avatar>
             <div>
               <p className="text-sm font-medium text-white">Алексей Петров</p>
-              <p className="text-xs text-gray-500">alexey@finpotok.ru</p>
+              <p className="text-xs text-gray-500">Инвестор · Портфель #4821</p>
             </div>
           </div>
           <button className="text-sm text-violet-400 hover:text-violet-300">Изменить</button>
@@ -33,13 +33,13 @@ export function PaymentRolesCard() {
 
         <div>
           <label className="mb-2 flex items-center gap-1 text-xs text-gray-400">
-            Способ оплаты <Info className="h-3 w-3" />
+            Уровень риска <Info className="h-3 w-3" />
           </label>
           <div className="flex items-center justify-between rounded-lg bg-[#0f0f0f] border border-[#262626] px-3 py-2.5">
-            <span className="text-sm text-white">Банковский перевод</span>
+            <span className="text-sm text-white">Умеренный</span>
             <ChevronDown className="h-4 w-4 text-gray-500" />
           </div>
-          <p className="mt-1 text-xs text-gray-500">Перевод в тот же день, без комиссии.</p>
+          <p className="mt-1 text-xs text-gray-500">Стоп-лосс 10% · Ребалансировка ежеквартально</p>
         </div>
 
         <div className="border-t border-dashed border-[#333] pt-4">
@@ -49,15 +49,15 @@ export function PaymentRolesCard() {
                 <Building2 className="h-5 w-5 text-gray-500" />
               </div>
               <div>
-                <p className="text-sm font-medium text-white">ООО «Финансовый Партнёр»</p>
-                <p className="text-xs text-gray-500">Счёт ••9876 · БИК ••5432</p>
+                <p className="text-sm font-medium text-white">Сбалансированный портфель</p>
+                <p className="text-xs text-gray-500">Доходность: +22% · Риск: средний</p>
               </div>
             </div>
             <button className="text-sm text-violet-400 hover:text-violet-300">Изменить</button>
           </div>
         </div>
 
-        <Button className="w-full bg-[#252525] text-gray-400 hover:bg-[#2a2a2a] hover:text-white">Продолжить</Button>
+        <Button className="w-full bg-[#252525] text-gray-400 hover:bg-[#2a2a2a] hover:text-white">Применить настройки</Button>
       </div>
     </div>
   )
