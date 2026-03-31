@@ -7,7 +7,7 @@ export function Header() {
       <div className="flex items-center gap-2">
         <ФинПотокLogo />
         <span className="text-lg font-semibold text-white">
-          ИнвестПро<sup className="text-xs">™</sup>
+          Эволюция<sup className="text-xs">™</sup>
         </span>
       </div>
 
